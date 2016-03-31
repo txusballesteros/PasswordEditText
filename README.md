@@ -41,7 +41,7 @@ And at the end, enjoy the library.
 
 ## License
 
-Copyright Txus Ballesteros & Francisco Sirvent 2016
+Copyright Txus Ballesteros 2016
 
 This file is part of some open source application.
 
