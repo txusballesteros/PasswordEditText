@@ -29,6 +29,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.AppCompatEditText;
+import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
@@ -58,6 +59,7 @@ public class PasswordEditText extends AppCompatEditText {
     }
 
     private void initializeView(AttributeSet attrs) {
+        setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         setTransformationMethod(PasswordTransformationMethod.getInstance());
         if (attrs != null) {
             TypedArray attributes = getContext().getTheme()
@@ -67,12 +69,12 @@ public class PasswordEditText extends AppCompatEditText {
             showPasswordDrawable = getDrawable(attributes, R.styleable.PasswordEditText_showDrawable, drawableTint);
             hidePasswordDrawable = getDrawable(attributes, R.styleable.PasswordEditText_hideDrawable, drawableTint);
             if (showPasswordDrawable == null) {
-                showPasswordDrawable = getResources()
-                        .getDrawable(R.drawable.ic_password_visible_24dp);
+                showPasswordDrawable = getDrawable(getResources()
+                        .getDrawable(R.drawable.ic_password_visible_24dp), drawableTint);
             }
             if (hidePasswordDrawable == null) {
-                hidePasswordDrawable = getResources()
-                        .getDrawable(R.drawable.ic_password_hidden_24dp);
+                hidePasswordDrawable = getDrawable(getResources()
+                        .getDrawable(R.drawable.ic_password_hidden_24dp), drawableTint);
             }
             if (showPasswordDrawable != null && hidePasswordDrawable != null) {
                 setCompoundDrawablesWithIntrinsicBounds(null, null, showPasswordDrawable, null);
@@ -84,10 +86,12 @@ public class PasswordEditText extends AppCompatEditText {
 
     private Drawable getDrawable(TypedArray attributes, int attribute, int tint) {
         Drawable drawable = attributes.getDrawable(attribute);
-        if (drawable != null) {
+        return getDrawable(drawable, tint);
+    }
+
+    private Drawable getDrawable(Drawable drawable, int tint) {
+        if (drawable != null && tint != WITHOUT_TINT) {
             drawable = DrawableCompat.wrap(drawable);
-        }
-        if (tint != WITHOUT_TINT) {
             DrawableCompat.setTint(drawable, tint);
         }
         return drawable;

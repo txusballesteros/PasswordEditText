@@ -54,6 +54,4 @@ dependencies {
     def mobileDependencies = globalConfiguration.mobileDependencies
     compile project(':PasswordEditText')
     compile mobileDependencies.AppCompat
-    compile mobileDependencies.DesignLibrary
-    compile mobileDependencies.ButterKnife
 }

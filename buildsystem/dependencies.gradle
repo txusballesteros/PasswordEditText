@@ -32,8 +32,8 @@ ext {
     //Android
     androidApplicationId = "com.txusballesteros"
     androidBuildToolsVersion = "23.0.2"
-    appMinSdkVersion = 19
-    androidMinSdkVersion = 14
+    appMinSdkVersion = 11
+    androidMinSdkVersion = 11
     androidTargetSdkVersion = 23
     androidCompileSdkVersion = 23
     androidVersionCode = 1
@@ -53,12 +53,9 @@ ext {
 
     mobileDependencies = [
         AppCompat: "com.android.support:appcompat-v7:${androidSupportVersion}",
-        DesignLibrary: "com.android.support:design:${androidSupportVersion}",
-        ButterKnife: "com.jakewharton:butterknife:${butterKnifeVersion}",
     ]
 
     libraryDependencies = [
         AppCompat: "com.android.support:appcompat-v7:${androidSupportVersion}",
-        AndroidAnnotations: "com.android.support:support-annotations:${androidSupportVersion}",
     ]
 }
