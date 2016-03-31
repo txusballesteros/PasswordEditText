@@ -8,7 +8,7 @@ Password EditText is the easy way to have a reveal password field into your logi
 
 ## Latest Version
 
-![](https://img.shields.io/badge/platform-android-green.svg) ![](https://img.shields.io/badge/Min%20SDK-1-green.svg) ![](https://img.shields.io/badge/Licence-Apache%20v2-green.svg)
+[ ![Download](https://api.bintray.com/packages/txusballesteros/maven/PasswordEditText/images/download.svg) ](https://bintray.com/txusballesteros/maven/PasswordEditText/_latestVersion) ![](https://img.shields.io/badge/platform-android-green.svg) ![](https://img.shields.io/badge/Min%20SDK-1-green.svg) ![](https://img.shields.io/badge/Licence-Apache%20v2-green.svg) [![Build Status](https://travis-ci.org/txusballesteros/PasswordEditText.svg?branch=master)](https://travis-ci.org/txusballesteros/PasswordEditText)
 
 ## How to use
 
